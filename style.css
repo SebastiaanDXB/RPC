@@ -66,7 +66,7 @@ button {
 footer {
     position: fixed;
     display: block;
-    height: 100px;
+    height: 85px;
     width: 100%;
     background-color: cornflowerblue;
     bottom: 0;
@@ -77,7 +77,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 100px;
+    height: 85px;
 }
 #playerScore, #computerScore {
     text-align: center;
