@@ -4,64 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Rock Paper Scissors</title>
-    
+    <title>Rock Paper Scissors</title>   
 </head>
 <body>
-    
-  <script>
-const ROCK = "rock"
-const PAPER = "paper"
-const SCISSOR = "scissor"
-const computerResponse = computerPlay(1, 3)
-const playerSelection = prompt("Make your move!")
-const computerSelection = computerPlay()
-let tie = "It's a tie!"
-let computerWin = "Computer wins!"
-let playerWin = "You win!"
+    <header>
+        <img src="images/rps-logo.png" alt="rps-logo" class="title">
+    </header>
+    <main>
+        <h2>Computer Selection</h2>
+        <div id="computerselection"></div>
 
-function computerPlay() {
-    let computerSelection = Math.floor(Math.random() * 3)
-    if (computerSelection === 0) {
-        return ROCK
-    } else if (computerSelection === 1) {
-        return PAPER
-    } else {
-        return SCISSOR
-    }
-}
-
-alert(computerSelection)
-
-function playRound(playerSelection, computerSelection) {
-    // your code here!
-    if (playerSelection == computerSelection) {
-        return tie
-    } else if (playerSelection == "rock" && computerSelection == PAPER || playerSelection == "paper" && computerSelection == SCISSOR || playerSelection == "scissor" && computerSelection == ROCK) {
-        return computerWin
-    } else if (playerSelection == "rock" && computerSelection == SCISSOR || playerSelection == "paper" && computerSelection == ROCK || playerSelection == "scissor" && computerSelection == PAPER) {
-        return playerWin
-    }
-}
-
-console.log(playRound(playerSelection, computerSelection))
-
-function game() {
-    let payerPoints = 0
-    let computerPoints = 0
-    while (computerWin < 5 || playerWin < 5) {
-        return playRound
-    }
-    playerPoints++;
-    computerPoints++;
-    
-    if (playerPoints == 5) {
-        console.log("You win")
-    } else if (computerPoints == 5) {
-        console.log("Computer Wins")
-    }
-}
-console.log(game())
-  </script>  
+        <div id="container">
+            <div id="result"></div>
+        </div>
+        
+        <h2>Player Selection</h2>
+        <div id="playerselection">
+            <button onclick="rockFunc()" id="rock">
+                <img src="images/xrock.png" width="100%">
+            </button>
+  
+            <button onclick="paperFunc()" id="paper">
+                <img src="images/xpaper.png" width="100%">
+            </button>
+            
+            <button onclick="scissorsFunc()" id="scissors">
+                <img src="images/xscissors.png" width="100%">
+            </button>
+        </div>  
+        <div id="resetcontainer">
+            <button onclick="location.reload()" id="reset">
+                <img src="images/reset.png" width="100%">
+            </button>
+        </div>  
+    </main>
+    <footer>
+        <div id="scoreboard">
+            <div>
+                <div id="labelPlayerScore">Your score</div>
+                <div id="playerScore">0</div>
+            </div>
+            <div>
+                <div id="labelComputerScore">Computer Score</div>
+                <div id="computerScore">0</div>
+            </div>
+        </div>
+    </footer>
+  <script src="index.js"></script>  
 </body>
 </html>
